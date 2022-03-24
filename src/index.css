@@ -1,0 +1,11 @@
+.bi-pencil:hover::before {
+    content: "\f4c9";
+}
+
+.bi-star:hover::before {
+    content: "\f586";
+}
+
+.task-body {
+    margin-left: 5px;
+}
