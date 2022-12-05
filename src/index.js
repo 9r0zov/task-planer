@@ -72,7 +72,7 @@ const triggerTaskFieldChange = (taskId, fieldName) => {
     createHtmlTask(task)
 }
 
-const removeHtmlTask = ({taskId}) => {
+const removeHtmlTask = ({ taskId }) => {
     document.getElementById(`task-${taskId}`).remove()
 }
 
@@ -85,12 +85,12 @@ const triggerTaskContainers = () => {
         containers.forEach(cnt => {
             const tasksContainer = document.getElementsByClassName(`${cnt}-container`)[0]
             if (tasks.filter(t => {
-                if ((cnt !== 'done' && !t['done']) || cnt === 'done') {
-                    return t[cnt]
-                } else {
-                    return false
-                }
-            }).length === 0) {
+                    if ((cnt !== 'done' && !t['done']) || cnt === 'done') {
+                        return t[cnt]
+                    } else {
+                        return false
+                    }
+                }).length === 0) {
                 tasksContainer.setAttribute('hidden', 'true')
             } else {
                 tasksContainer.removeAttribute('hidden')
@@ -99,7 +99,7 @@ const triggerTaskContainers = () => {
     }
 }
 
-const createHtmlTask = ({taskId, text, prioritized, done}) => {
+const createHtmlTask = ({ taskId, text, prioritized, done }) => {
     const targetContainer = done ? 'done' : prioritized ? 'prioritized' : 'current'
     const tasksContainer = document.getElementsByClassName(`${targetContainer}-container-body`)[0]
 
